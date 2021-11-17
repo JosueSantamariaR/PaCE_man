@@ -6,24 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.c
-Game.h
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.h
-stdio.h
--
-stdbool.h
--
-unistd.h
--
-pthread.h
--
-stdlib.h
--
-
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.h
-stdbool.h
--
-
 /cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.c
 SocketServer.h
 /cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h
@@ -44,13 +26,5 @@ arpa/inet.h
 stdbool.h
 -
 
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h
-
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/main.c
-stdio.h
--
-Game.h
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.h
-SocketServer.h
 /cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h
 

@@ -70,24 +70,24 @@ void joinToGame() {
     printf("--------------------OBJECTS MENU----------------------\n");
     printf("------------------------------------------------------\n");
     printf("------------------------------------------------------\n");
-    printf("1.\tPara ingresar una fruta:\n");
-    printf("2.\tPara ingresar un fantasma:\n");
-    printf("3.\tPara ingresar una pastilla:\n");
-    printf("4.\tModificar la velocidad de los fantasmas:\n");
-    printf("5.\tRegresar: ");
-    printf("6.\tSalir: ");
+    printf("1.\tPara ingresar una fruta\n");
+    printf("2.\tPara ingresar un fantasma\n");
+    printf("3.\tPara ingresar una pastilla\n");
+    printf("4.\tModificar la velocidad de los fantasmas\n");
+    printf("5.\tRegresar\n");
+    printf("6.\tSalir \n");
     printf("  \tIngrese la accion a realizar: ");
 
     int option=0;
     scanf("%u", &option);
 
     if(option==1) {
-
-        printf("1.\tCereza:\n");
-        printf("2.\tFresa:\n");
-        printf("3.\tNaranja:\n");
-        printf("4.\tManzana:\n");
-        printf("5.\tUvas:\n");
+        printf("\n");
+        printf("1.\tCereza\n");
+        printf("2.\tFresa\n");
+        printf("3.\tNaranja\n");
+        printf("4.\tManzana\n");
+        printf("5.\tUvas\n");
         int fruitType;
         printf("  \tIngrese la fruta a escoger: ");
         scanf("%u", &fruitType);
@@ -98,10 +98,11 @@ void joinToGame() {
 
     }
     if(option==2) {
-        printf("1.\tBlinky:\n");
-        printf("2.\tPinky:\n");
-        printf("3.\tInky:\n");
-        printf("4.\tClynde:\n");
+        printf("\n");
+        printf("1.\tBlinky\n");
+        printf("2.\tPinky\n");
+        printf("3.\tInky\n");
+        printf("4.\tClynde\n");
         printf("  \tIngrese el fantasma a crear: ");
 
         int ghostType;
@@ -121,6 +122,7 @@ void joinToGame() {
 
     }
     if(option==3) {
+
         printf("\n\tIngrese la fila");
         int rowp;
         scanf("%u", &rowp);
@@ -131,10 +133,10 @@ void joinToGame() {
     }
     if(option==4) {
         printf("\n\t Cambiar velocidad del fantasma\n");
-        printf("1.\tBlinky:\n");
-        printf("2.\tPinky:\n");
-        printf("3.\tInky:\n");
-        printf("4.\tClynde:\n");
+        printf("1.\tBlinky\n");
+        printf("2.\tPinky\n");
+        printf("3.\tInky\n");
+        printf("4.\tClynde\n");
         printf("  \tIngrese el fantasma a cambiar: ");
         int typeG;
         scanf("%u", &typeG);
@@ -187,8 +189,8 @@ void client() {
     joinToGame();
     send(socketValue , message , 1024, 0 );
     printf("\n");
-    printf("1.\tPara ingresar objetos:\n");
-    printf("2.\tPara desconectarse:\n");
+    printf("1.\tPara ingresar objetos\n");
+    printf("2.\tPara desconectarse\n");
     printf("  \tIngrese la accion a realizar: ");
     close(socketValue);
 }
@@ -198,8 +200,8 @@ void startClient() {
     printf("--------------------PACMAN MENU-----------------------\n");
     printf("------------------------------------------------------\n");
     printf("------------------------------------------------------\n");
-    printf("1.\tPara ingresar objetos:\n");
-    printf("2.\tPara desconectarse:\n");
+    printf("1.\tPara ingresar objetos\n");
+    printf("2.\tPara desconectarse\n");
     printf("  \tIngrese la accion a realizar: ");
 
 
