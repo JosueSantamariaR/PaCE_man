@@ -15,10 +15,6 @@ public class Ghost {
 	private int control_move_var=2;
 	private double speed=1;
 
-	//int maze[][] = GhostBacktracking.fill_matriz(17, 13);
-	
-	private Vector<Rectangle> bounds;
-	
 	public Ghost(int type_aux) {
 		is_on = true;
 		type = type_aux;
@@ -62,63 +58,44 @@ public class Ghost {
 		}
 	}
 
-		/*
-	private boolean wall_collision(double x2, double y2) {
-		for(int i=0; i<bounds.size(); i++) {
-			if(bounds.get(i).intersects(new Rectangle((int) (x2), (int) (y2), 25, 25))) {
-				return true;
-			}
+	public boolean collision(Rectangle pacman) {
+		if(pacman.intersects(getBounds())) {
+			return true;
 		}
 		return false;
 	}
 
-	private boolean wall_collision() {
-		for(int i=0; i<bounds.size(); i++) {
-			if(bounds.get(i).intersects(getBounds())) {
-				return true;
-			}
-		}
-		return false;
+	public boolean get_is_on(){
+		return is_on;
 	}
-	
+
 	public Rectangle getBounds() {
-		return new Rectangle((int ) (x+xa), (int) (y+ya), 25, 25);
+		return new Rectangle((int ) (posX * 25) + 205, (int) (posY * 25)+5, 25, 25);
 	}
 	
 	public Rectangle getBounds_without_moving() {
-		return new Rectangle((int )x+5, (int)y, 25-10, 25-10);
-	}
-	
-	public void paint(Graphics2D g){
-		g.drawImage(ghost_image, (int ) x, (int) y, null);
-	}
-	
-	public double getX() {
-		return x;
+		return new Rectangle((int )posX+5, (int)posY, 25-10, 25-10);
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	public double getY() {
-		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
-	}
-
-	public int getWidth_ghost() {
-		return width_ghost;
-	}
-
-	public int getHeigth_ghost() {
-		return heigth_ghost;
-	}
 	
 	public void restart_position() {
-		x = 193;
-		y = 224;
-	}*/
+		switch(type){
+			case 1:
+				posY = 12;
+				posX = 14;
+				break;
+			case 2:
+				posY = 12;
+				posX = 15;
+				break;
+			case 3:
+				posY = 12;
+				posX = 13;
+				break;
+			case 4:
+				posY = 11;
+				posX = 14;
+				break;
+		}
+	}
 }

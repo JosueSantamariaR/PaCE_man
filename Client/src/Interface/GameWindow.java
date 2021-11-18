@@ -148,11 +148,28 @@ public class GameWindow extends JPanel implements ActionListener {
 		}
 
 		for(int i = 0; i < FruitsList.size(); i++){
-			FruitsList.get(i).paint(g2d);
+			Fruit temp_fruit = FruitsList.get(i);
+			temp_fruit.paint(g2d);
+			if(temp_fruit.collision(pacman.getColisionZone())){
+				if(temp_fruit.get_is_on()){
+					pacman.setScore(pacman.getScore()+temp_fruit.getPuntaje());
+					FruitsList.remove(temp_fruit);
+				}
+			}
 		}
 
 		for(int i = 0; i < GhostsList.size(); i++){
-			GhostsList.get(i).paint(g2d);
+			Ghost temp_ghost = GhostsList.get(i);
+			temp_ghost.paint(g2d);
+			if(temp_ghost.collision(pacman.getColisionZone())){
+				System.out.println("Choco con el ghosts");
+				if(temp_ghost.get_is_on()){
+					System.out.println(("Aqui el personaje pierde"));
+				} else{
+					System.out.println("Aqui se devuelve el fantasma al lugar");
+					temp_ghost.restart_position();
+				}
+			}
 		}
 
 

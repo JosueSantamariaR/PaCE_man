@@ -1,17 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "C"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/Game.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o"
-  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o"
-  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/main.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o"
+  "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/Game.c" "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o"
+  "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/SocketServer.c" "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o"
+  "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/main.c" "/cygdrive/c/Users/Johnny Aguero/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
   )
 
 # Targets to which this target links.
