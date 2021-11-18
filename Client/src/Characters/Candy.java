@@ -39,6 +39,21 @@ public class Candy {
         return is_on;
     }
 
+    public boolean collision(Rectangle pacman) {
+        if(pacman.intersects(getBounds())) {
+            return true;
+        }
+        return false;
+    }
+
+    public Rectangle getBounds() {
+        return new Rectangle((int ) (posX * 25) + 205, (int) (posY * 25)+5, 16, 16);
+    }
+
+    public int getScore() {
+        return score;
+    }
+
     public void setCords(int cordx, int cordy) {
         posX = cordx;
         posY = cordy;

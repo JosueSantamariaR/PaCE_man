@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -79,24 +80,24 @@ public class GameWindow extends JPanel implements ActionListener {
 		pacman.setColisionZone(colisionZone);
 		pacman.setDir(0);
 		timer = new Timer(40, this);
-		timer.start();
-
-
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-		doDrawing(g);
+		try {
+			doDrawing(g);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		isCollidingDots();
 
 
 	}
 
-	private void doDrawing(Graphics g) {
+	private void doDrawing(Graphics g) throws IOException {
 		checkChanges(g);
-
 		for (int f = 0; f < 31; f++) {
 			for (int c = 0; c < 28; c++) {
 				
@@ -161,7 +162,15 @@ public class GameWindow extends JPanel implements ActionListener {
 		}
 
 		for(int i = 0; i < candyList.size(); i++){
-			candyList.get(i).paint(g2d);
+			Candy temp_candy = candyList.get(i);
+			temp_candy.paint(g2d);
+			if(temp_candy.collision(pacman.getColisionZone())){
+				if(temp_candy.get_is_on()){
+					pacman.setScore(pacman.getScore()+temp_candy.getScore());
+					candyList.remove(temp_candy);
+					candyChange();
+				}
+			}
 		}
 
 		for(int i = 0; i < GhostsList.size(); i++){
@@ -172,13 +181,42 @@ public class GameWindow extends JPanel implements ActionListener {
 				if(temp_ghost.get_is_on()){
 					System.out.println(("Aqui el personaje pierde"));
 				} else{
-					System.out.println("Aqui se devuelve el fantasma al lugar");
+					temp_ghost.set_is_on(true);
+					temp_ghost.load_image();
 					temp_ghost.restart_position();
 				}
 			}
 		}
 
+		if(timer.isRunning()){
+			if(timer.getDelay() == 240){
+				for(int i = 0; i < GhostsList.size(); i++){
+					Ghost temp_ghost = GhostsList.get(i);
+					temp_ghost.set_is_on(true);
+					temp_ghost.load_image();
+				}
+				timer.restart();
+				timer.setDelay(40);
+				timer.stop();
+			} else{
+				timer.setDelay(timer.getDelay() + 1);
+			}
+		}
 
+
+	}
+
+	public void candyChange() throws IOException {
+		//pacman.setVelX(pacman.getVelX()+5);
+		//pacman.setVelY(pacman.getVelY()+5);
+
+		for(int i = 0; i < GhostsList.size(); i++){
+			Ghost temp_ghost = GhostsList.get(i);
+			temp_ghost.set_is_on(false);
+			temp_ghost.load_image();
+		}
+
+		timer.start();
 	}
 
 	public Boolean isCollidingWalls() {
@@ -188,8 +226,8 @@ public class GameWindow extends JPanel implements ActionListener {
 			}
 		}
 		return false;
-
 	}
+
 	public void isCollidingDots() {
 		for(int i=0; i<dotList.size();i++) {
 			if(pacman.getColisionZone().intersects(dotList.get(i))) {
@@ -198,9 +236,6 @@ public class GameWindow extends JPanel implements ActionListener {
 					dotConsumedListX.add(pointConsumed);
 					pacman.setScore(pacman.getScore()+5);
 				}
-				
-
-
 			}
 		}
 
@@ -302,7 +337,6 @@ public class GameWindow extends JPanel implements ActionListener {
 			}
 			if(datos[0].contentEquals("pastilla")) {
 				Candy candy = new Candy(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[3]));
-				System.out.println("Creando pastilla ");
 				candyList.add(candy);
 			}
 			if(datos[0].contentEquals("velocidad")) {
