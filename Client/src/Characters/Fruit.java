@@ -9,12 +9,12 @@ import java.io.IOException;
  */
 public class Fruit {
 	private boolean is_on;
-	int posX, posY;
-	int type;
-	int puntaje;
+	Integer posX, posY;
+	Integer type;
+	Integer puntaje;
 	Image fruit_image;
 	
-	public Fruit(int type_aux, int puntaje_aux, int cordx, int cordy){
+	public Fruit(Integer type_aux, Integer puntaje_aux, Integer cordx, Integer cordy){
 		try {
 			is_on = true;
 			type = type_aux;
@@ -60,10 +60,10 @@ public class Fruit {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int ) (posX * 25) + 205, (int) (posY * 25)+5, 16, 16);
+		return new Rectangle((Integer ) (posX * 25) + 205, (Integer) (posY * 25)+5, 16, 16);
 	}
 
-	public int getPuntaje() {
+	public Integer getPuntaje() {
 		return puntaje;
 	}
 
@@ -71,7 +71,7 @@ public class Fruit {
 		return is_on;
 	}
 
-	public void setCords(int cordx, int cordy){
+	public void setCords(Integer cordx, Integer cordy){
 		posX = cordx;
 		posY = cordy;
 	}

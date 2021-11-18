@@ -7,13 +7,13 @@ import java.util.Vector;
 
 public class Ghost {
 	private boolean is_on;
-	int posX, posY;
-	int type;
+	Integer posX, posY;
+	Integer type;
 	Image ghost_image;
 
-	int speed = 1;
+	Integer speed = 1;
 
-	public Ghost(int type_aux, int speed_aux) {
+	public Ghost(Integer type_aux, Integer speed_aux) {
 		is_on = true;
 		type = type_aux;
 		speed = speed_aux;
@@ -47,11 +47,11 @@ public class Ghost {
 		}
 	}
 
-	public int getPosX() {
+	public Integer getPosX() {
 		return posX;
 	}
 
-	public int getPosY() {
+	public Integer getPosY() {
 		return posY;
 	}
 
@@ -93,24 +93,31 @@ public class Ghost {
 		return new Rectangle(posX, posY, 25, 25);
 	}
 
-	
+	public Integer getType() {
+		return type;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+	}
+
 	public void restart_position() {
 		switch(type){
 			case 1:
-				posY = (int) 12 * 25 + 5;
-				posX = (int) 14 * 25 + 205;
+				posY = (Integer) 12 * 25 + 5;
+				posX = (Integer) 14 * 25 + 205;
 				break;
 			case 2:
-				posY = (int) 12 * 25 + 5;
-				posX = (int) 15 * 25 + 205;
+				posY = (Integer) 12 * 25 + 5;
+				posX = (Integer) 15 * 25 + 205;
 				break;
 			case 3:
-				posY = (int) 12 * 25 + 5;
-				posX = (int) 13 * 25 + 205;
+				posY = (Integer) 12 * 25 + 5;
+				posX = (Integer) 13 * 25 + 205;
 				break;
 			case 4:
-				posY = (int) 11 * 25 + 5;
-				posX = (int) 14 * 25 + 205;
+				posY = (Integer) 11 * 25 + 5;
+				posX = (Integer) 14 * 25 + 205;
 				break;
 		}
 	}

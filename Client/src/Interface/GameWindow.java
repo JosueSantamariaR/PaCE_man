@@ -68,6 +68,8 @@ public class GameWindow extends JPanel implements ActionListener {
 	Integer size = 25;
 	Point pointVer;
 
+	Integer score_aux = 10000;
+
 	public GameWindow() {
 		setBounds(0, 0, 1366, 740);
 		setBackground(Color.BLACK);
@@ -100,8 +102,8 @@ public class GameWindow extends JPanel implements ActionListener {
 
 		checkChanges(g);
 
-		for (int f = 0; f < 31; f++) {
-			for (int c = 0; c < 28; c++) {
+		for (Integer f = 0; f < 31; f++) {
+			for (Integer c = 0; c < 28; c++) {
 				
 				if (matrix[f][c] == 1) {
 					Shape rect = new Rectangle((f * size) + 200, (c * size), size, size);
@@ -132,8 +134,8 @@ public class GameWindow extends JPanel implements ActionListener {
 		g.drawString("Level: "+ pacman.getCurrentLevel().toString(), 1000, 100);
 		g.drawString("Score: "+ pacman.getScore().toString(), 1000, 140);
 		g.drawString("Lives: "+ pacman.getLives().toString(), 1000, 180);
-		for(int i=0;i<pacman.getLives();i++){
-			int sum=50*i;
+		for(Integer i=0;i<pacman.getLives();i++){
+			Integer sum=50*i;
 			g2d.drawImage(pacman.getPacmanLives(), 1100+sum, 160, this);
 
 		}
@@ -156,7 +158,12 @@ public class GameWindow extends JPanel implements ActionListener {
 			g.drawRect(pacman.getPosX(), pacman.getPosY(), 17, 17);
 		}
 
-		for(int i = 0; i < FruitsList.size(); i++){
+		if(pacman.getScore() >= score_aux){
+			pacman.addLives(1);
+			score_aux += 10000;
+		}
+
+		for(Integer i = 0; i < FruitsList.size(); i++){
 			Fruit temp_fruit = FruitsList.get(i);
 			temp_fruit.paint(g2d);
 			if(temp_fruit.collision(pacman.getColisionZone())){
@@ -167,7 +174,7 @@ public class GameWindow extends JPanel implements ActionListener {
 			}
 		}
 
-		for(int i = 0; i < candyList.size(); i++){
+		for(Integer i = 0; i < candyList.size(); i++){
 			Candy temp_candy = candyList.get(i);
 			temp_candy.paint(g2d);
 			if(temp_candy.collision(pacman.getColisionZone())){
@@ -179,7 +186,7 @@ public class GameWindow extends JPanel implements ActionListener {
 			}
 		}
 
-		for(int i = 0; i < GhostsList.size(); i++){
+		for(Integer i = 0; i < GhostsList.size(); i++){
 			Ghost temp_ghost = GhostsList.get(i);
 			if(temp_ghost.collision(pacman.getColisionZone())){
 				if(temp_ghost.get_is_on()){
@@ -213,7 +220,7 @@ public class GameWindow extends JPanel implements ActionListener {
 
 		if(timer.isRunning()){
 			if(timer.getDelay() == 240){
-				for(int i = 0; i < GhostsList.size(); i++){
+				for(Integer i = 0; i < GhostsList.size(); i++){
 					Ghost temp_ghost = GhostsList.get(i);
 					temp_ghost.set_is_on(true);
 					temp_ghost.load_image();
@@ -231,7 +238,7 @@ public class GameWindow extends JPanel implements ActionListener {
 
 	public void candyChange() throws IOException {
 
-		for(int i = 0; i < GhostsList.size(); i++){
+		for(Integer i = 0; i < GhostsList.size(); i++){
 			Ghost temp_ghost = GhostsList.get(i);
 			temp_ghost.set_is_on(false);
 			temp_ghost.load_image();
@@ -241,7 +248,7 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	public Boolean isCollidingWalls() {
-		for(int i=0; i<rectList.size();i++) {
+		for(Integer i=0; i<rectList.size();i++) {
 			if(pacman.getColisionZone().intersects(rectList.get(i))) {
 				return true;
 			}
@@ -250,12 +257,12 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	public void isCollidingDots() {
-		for(int i=0; i<dotList.size();i++) {
+		for(Integer i=0; i<dotList.size();i++) {
 			if(pacman.getColisionZone().intersects(dotList.get(i))) {
 				Point pointConsumed = new Point((dotList.get(i).x-205)/size,(dotList.get(i).y - 5)/size);
 				if(!dotConsumedListX.contains(pointConsumed)) {
 					dotConsumedListX.add(pointConsumed);
-					pacman.setScore(pacman.getScore()+5);
+					pacman.setScore(pacman.getScore()+10);
 				}
 			}
 		}
@@ -268,7 +275,7 @@ public class GameWindow extends JPanel implements ActionListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
 
-			int key = e.getKeyCode();
+			Integer key = e.getKeyCode();
 		
 			if (playing) {
 				if (key == KeyEvent.VK_LEFT) {
@@ -307,7 +314,7 @@ public class GameWindow extends JPanel implements ActionListener {
 		@Override
 		public void keyReleased(KeyEvent e) {
 
-			int keyCode = e.getKeyCode();
+			Integer keyCode = e.getKeyCode();
 			if (keyCode == e.VK_LEFT) {
 				pacman.setVelX(0);
 			}
@@ -344,8 +351,8 @@ public class GameWindow extends JPanel implements ActionListener {
 
 			if(datos[0].contentEquals("fruta")) {
 				while(true){
-					int fila = Integer.parseInt(datos[3]);
-					int columna = Integer.parseInt(datos[4]);
+					Integer fila = Integer.parseInt(datos[3]);
+					Integer columna = Integer.parseInt(datos[4]);
 					if(matrix[fila][columna] == 0 || matrix[fila][columna] == 3){
 						Fruit fruit = new Fruit(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), columna, fila);
 						FruitsList.add(fruit);
@@ -363,8 +370,8 @@ public class GameWindow extends JPanel implements ActionListener {
 
 			if(datos[0].contentEquals("pastilla")) {
 				while(true){
-					int fila = Integer.parseInt(datos[2]);
-					int columna = Integer.parseInt(datos[3]);
+					Integer fila = Integer.parseInt(datos[2]);
+					Integer columna = Integer.parseInt(datos[3]);
 					if(matrix[fila][columna] == 0 || matrix[fila][columna] == 3) {
 						Candy candy = new Candy(Integer.parseInt(datos[1]), columna, fila);
 						candyList.add(candy);
@@ -374,13 +381,18 @@ public class GameWindow extends JPanel implements ActionListener {
 					}
 				}
 			}
+
 			if(datos[0].contentEquals("vidas")) {
 				pacman.addLives(Integer.parseInt(datos[1]));
-				System.out.println(pacman.getLives());
 			}
+
 			if(datos[0].contentEquals("velocidad")) {
-				//Cambiando velocidad
-				System.out.println("Cambiando velocidad ");
+				Integer speed = Integer.parseInt(datos[2]);
+				for(Integer i = 0; i < GhostsList.size(); i++){
+					if(GhostsList.get(i).getType() == Integer.parseInt(datos[1])){
+						GhostsList.get(i).setSpeed(speed);
+					}
+				}
 			}
 			
 		}

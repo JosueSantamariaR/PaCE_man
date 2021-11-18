@@ -7,11 +7,11 @@ import java.io.IOException;
 public class Candy {
 
     private boolean is_on;
-    int posX, posY;
-    int score;
+    Integer posX, posY;
+    Integer score;
     Image candy_image;
 
-    public Candy(int puntaje_aux, int cordx, int cordy) {
+    public Candy(Integer puntaje_aux, Integer cordx, Integer cordy) {
         try {
             is_on = true;
             score = puntaje_aux;
@@ -47,14 +47,14 @@ public class Candy {
     }
 
     public Rectangle getBounds() {
-        return new Rectangle((int ) (posX * 25) + 205, (int) (posY * 25)+5, 16, 16);
+        return new Rectangle((Integer ) (posX * 25) + 205, (Integer) (posY * 25)+5, 16, 16);
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setCords(int cordx, int cordy) {
+    public void setCords(Integer cordx, Integer cordy) {
         posX = cordx;
         posY = cordy;
     }
