@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.c" "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o"
-  "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.c" "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o"
-  "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/main.c" "/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o"
+  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/Game.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o"
+  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o"
+  "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/main.c" "/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

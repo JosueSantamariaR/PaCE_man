@@ -9,7 +9,7 @@ public class windowJFrame extends JFrame {
 	
 	
 	public windowJFrame() {
-		setTitle("Pac Man");
+		setTitle("PaCE-man");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1366, 740);

@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin"/>
+				<Option working_dir="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin"/>
+				<Option working_dir="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin"/>
+				<Option working_dir="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server">
-				<Option output="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Server.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin"/>
+				<Option output="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,15 +49,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 Server"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 Server"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server/fast">
-				<Option output="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Server.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin"/>
+				<Option output="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,29 +67,29 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 Server/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 Server/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/cmake-build-debug-cygwin/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.c">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/Game.c">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/Game.h">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/Game.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.c">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.c">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/main.c">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/main.c">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

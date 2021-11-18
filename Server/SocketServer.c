@@ -90,11 +90,19 @@ void joinToGame() {
         printf("5.\tUvas\n");
         int fruitType;
         printf("  \tIngrese la fruta a escoger: ");
-        scanf("%u", &fruitType);
+        scanf("%d", &fruitType);
         int fruitScore;
         printf("  \tIngrese el puntaje de la fruta: ");
-        scanf("%u", &fruitScore);
-        sprintf(message, "fruta,%u,%u", fruitType, fruitScore);
+        scanf("%d", &fruitScore);
+        int fruitRow;
+        printf("  \tIngrese la fila: ");
+        scanf("%d", &fruitRow);
+        int fruitCol;
+        printf("  \tIngrese la columna: ");
+        scanf("%d", &fruitCol);
+
+        /*Envía la información de la fruta*/
+        sprintf(message, "fruta,%d,%d,%d,%d", fruitType, fruitScore, fruitRow, fruitCol);
 
     }
     if(option==2) {
@@ -106,18 +114,13 @@ void joinToGame() {
         printf("  \tIngrese el fantasma a crear: ");
 
         int ghostType;
-        scanf("%u", &ghostType);
+        scanf("%d", &ghostType);
 
         printf("\n\tIngrese velocidad:");
         int speed;
-        scanf("%u", &speed);
-        printf("\n\tIngrese la fila");
-        int row;
-        scanf("%u", &row);
-        printf("\n\tIngrese la columna");
-        int colum;
-        scanf("%u", &colum);
-        sprintf(message, "fantasma,%u,%u,%u,%u", ghostType, speed, row, colum);
+        scanf("%d", &speed);
+
+        sprintf(message, "fantasma,%d,%d", ghostType, speed);
 
 
     }
@@ -125,10 +128,10 @@ void joinToGame() {
 
         printf("\n\tIngrese la fila");
         int rowp;
-        scanf("%u", &rowp);
+        scanf("%d", &rowp);
         printf("\n\tIngrese la columna");
         int colump;
-        scanf("%u", &colump);
+        scanf("%d", &colump);
         sprintf(message, "pastilla,%u,%u", rowp, colump);
     }
     if(option==4) {
@@ -139,11 +142,11 @@ void joinToGame() {
         printf("4.\tClynde\n");
         printf("  \tIngrese el fantasma a cambiar: ");
         int typeG;
-        scanf("%u", &typeG);
+        scanf("%d", &typeG);
         printf("\n\tNueva velocidad:");
         int speedG;
-        scanf("%u", &speedG);
-        sprintf(message, "velocidad,%u,%u", typeG, speedG);
+        scanf("%d", &speedG);
+        sprintf(message, "velocidad,%d,%d", typeG, speedG);
 
     }
     if(option==5) {
@@ -187,7 +190,7 @@ void client() {
         return;
     }
     joinToGame();
-    send(socketValue , message , 1024, 0 );
+    send(socketValue , message , (strlen(message)+1), 0 );
     printf("\n");
     printf("1.\tPara ingresar objetos\n");
     printf("2.\tPara desconectarse\n");

@@ -8,7 +8,9 @@ public class PacMan {
 	Integer posX = 460;
 	Integer posY = 300;
 	Integer lives;
+
 	Image pacmanImg;
+
 	Image pacmanRightImage = new ImageIcon("Images/PacmanR.gif").getImage().getScaledInstance(16,16,1);
 	Image pacmanLeftImage = new ImageIcon("Images/PacmanL.gif").getImage().getScaledInstance(16,16,1);
 	Image pacmanDownImage = new ImageIcon("Images/PacmanD.gif").getImage().getScaledInstance(16,16,1);
@@ -18,8 +20,8 @@ public class PacMan {
 	Integer velY = 0;
 
 	Rectangle colisionZone;
-	
 	Boolean notColliding = true;
+
 	Integer option = 0;
 	Integer score =0;
 	Integer currentLevel = 1;

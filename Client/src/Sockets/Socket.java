@@ -46,9 +46,25 @@ public class Socket {
                 DataInputStream inputBuffer =
                         new DataInputStream(cs.getInputStream());
 
-                while ((serverMessage = inputBuffer.readLine()) != null) {
-                    System.out.println("Receiving data from server");
-                    System.out.print("Message from server: ");
+                while((serverMessage = inputBuffer.readLine()) != null) {
+
+                    int ascii;
+                    String auxiliar = "";
+                    for(int i = 0; i < serverMessage.length(); i++){
+                        ascii   = (int) serverMessage.charAt(i);
+                        if(ascii >= 48 && ascii <= 57){
+                            auxiliar += serverMessage.charAt(i);
+                        } else if(ascii >= 97 && ascii <= 122){
+                            auxiliar += serverMessage.charAt(i);
+                        } else if(ascii == 44){
+                            auxiliar += serverMessage.charAt(i);
+                        }
+                    }
+
+                    serverMessage = auxiliar;
+
+                    System.out.println("------Receiving server data-------");
+                    System.out.print("Server message: ");
                     System.out.println(serverMessage);
                     message = serverMessage;
                     GameWindow.putText(message);
@@ -58,7 +74,8 @@ public class Socket {
                 outputBuffer.close();
                 Thread.sleep(1);
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
 

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.c
+/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.c
 SocketServer.h
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h
+/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.h
 unistd.h
 -
 stdio.h
@@ -26,5 +26,5 @@ arpa/inet.h
 stdbool.h
 -
 
-/cygdrive/c/Users/garroakion/Desktop/PaCE_man/Server/SocketServer.h
+/cygdrive/c/Users/gabos/Documents/GitHub/PaCE_man/Server/SocketServer.h
 

@@ -1,5 +1,7 @@
 package Interface;
 
+import Characters.Fruit;
+import Characters.Ghost;
 import Characters.PacMan;
 
 import javax.swing.*;
@@ -51,13 +53,18 @@ public class GameWindow extends JPanel implements ActionListener {
 	Boolean playing;
 	Rectangle colisionZone;
 	private Timer timer;
+
 	ArrayList<Rectangle> rectList = new ArrayList<Rectangle>();
 	ArrayList<Rectangle> dotList = new ArrayList<Rectangle>();
 	ArrayList<Point> dotConsumedListX = new ArrayList<Point>();
+	ArrayList<Fruit> FruitsList = new ArrayList<Fruit>();
+	ArrayList<Ghost> GhostsList = new ArrayList<Ghost>();
 	//ArrayList<Integer> dotConsumedListY = new ArrayList<Integer>();
+
 	Image dotImg = new ImageIcon("Images/dot.png").getImage().getScaledInstance(15,15,1);
 	Integer size = 25;
 	Point pointVer;
+
 	public GameWindow() {
 		setBounds(0, 0, 1366, 740);
 		setBackground(Color.BLACK);
@@ -86,7 +93,7 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	private void doDrawing(Graphics g) {
-		checkChanges();
+		checkChanges(g);
 
 		for (int f = 0; f < 31; f++) {
 			for (int c = 0; c < 28; c++) {
@@ -138,6 +145,14 @@ public class GameWindow extends JPanel implements ActionListener {
 			g2d.drawImage(pacman.getpacmanImg(), pacman.getPosX(), pacman.getPosY(), this);
 			g.setColor(Color.BLACK);
 			g.drawRect(pacman.getPosX(), pacman.getPosY(), 17, 17);
+		}
+
+		for(int i = 0; i < FruitsList.size(); i++){
+			FruitsList.get(i).paint(g2d);
+		}
+
+		for(int i = 0; i < GhostsList.size(); i++){
+			GhostsList.get(i).paint(g2d);
 		}
 
 
@@ -243,21 +258,24 @@ public class GameWindow extends JPanel implements ActionListener {
 		repaint();
 	}
 	
-	void checkChanges(){
+	void checkChanges(Graphics g){
 		
 		if (mens != "") {
+
+			Graphics2D g2d = (Graphics2D) g;
+
 			System.out.print("Mensaje obtenido desde GameWindow: ");
 			System.out.println(mens);
 			String[] datos = mens.split(",");
 			mens="";
-			
+
 			if(datos[0].contentEquals("fruta")) {
-				//Crear fruta
-				System.out.println("Creando Fruta ");
+				Fruit fruit = new Fruit(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[4]), Integer.parseInt(datos[3]));
+				FruitsList.add(fruit);
 			}
 			if(datos[0].contentEquals("fantasma")) {
-				//Crear fantasma
-				System.out.println("Creando fantasma ");
+				Ghost ghost = new Ghost(Integer.parseInt(datos[1]));
+				GhostsList.add(ghost);
 			}
 			if(datos[0].contentEquals("pastilla")) {
 				//Crear pastilla
