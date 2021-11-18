@@ -11,13 +11,12 @@ public class Ghost {
 	int type;
 	Image ghost_image;
 
-	private int count_control_move_var;
-	private int control_move_var=2;
-	private double speed=1;
+	int speed = 1;
 
-	public Ghost(int type_aux) {
+	public Ghost(int type_aux, int speed_aux) {
 		is_on = true;
 		type = type_aux;
+		speed = speed_aux;
 
 		restart_position();
 		try {
@@ -48,9 +47,31 @@ public class Ghost {
 		}
 	}
 
-	public void paint(Graphics2D g2d){
-		g2d.drawRect((posX * 25) + 205, (posY * 25)+5, 15, 15);
-		g2d.drawImage(ghost_image,(posX * 25) + 205, (posY * 25)+5, null);
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void paint(Graphics2D g2d, String direccion){
+		switch (direccion){
+			case "R":
+				posX -= speed;
+				break;
+			case "L":
+				posX += speed;
+				break;
+			case "U":
+				posY -= speed;
+				break;
+			case "D":
+				posY += speed;
+				break;
+		}
+		g2d.drawRect(posX, posY, 15, 15);
+		g2d.drawImage(ghost_image, posX, posY, null);
 	}
 
 	public boolean collision(Rectangle pacman) {
@@ -69,31 +90,27 @@ public class Ghost {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle((int ) (posX * 25) + 205, (int) (posY * 25)+5, 25, 25);
-	}
-	
-	public Rectangle getBounds_without_moving() {
-		return new Rectangle((int )posX+5, (int)posY, 25-10, 25-10);
+		return new Rectangle(posX, posY, 25, 25);
 	}
 
 	
 	public void restart_position() {
 		switch(type){
 			case 1:
-				posY = 12;
-				posX = 14;
+				posY = (int) 12 * 25 + 5;
+				posX = (int) 14 * 25 + 205;
 				break;
 			case 2:
-				posY = 12;
-				posX = 15;
+				posY = (int) 12 * 25 + 5;
+				posX = (int) 15 * 25 + 205;
 				break;
 			case 3:
-				posY = 12;
-				posX = 13;
+				posY = (int) 12 * 25 + 5;
+				posX = (int) 13 * 25 + 205;
 				break;
 			case 4:
-				posY = 11;
-				posX = 14;
+				posY = (int) 11 * 25 + 5;
+				posX = (int) 14 * 25 + 205;
 				break;
 		}
 	}

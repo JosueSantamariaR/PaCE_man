@@ -97,7 +97,9 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	private void doDrawing(Graphics g) throws IOException {
+
 		checkChanges(g);
+
 		for (int f = 0; f < 31; f++) {
 			for (int c = 0; c < 28; c++) {
 				
@@ -140,13 +142,11 @@ public class GameWindow extends JPanel implements ActionListener {
 		colisionZone = new Rectangle(pacman.getPosX(), pacman.getPosY(), 17, 17);
 		pacman.setColisionZone(colisionZone);
 		if(isCollidingWalls() == false) {
-
 			g2d.drawImage(pacman.getpacmanImg(), pacman.getPosX(), pacman.getPosY(), this);
 			g.setColor(Color.BLACK);
 			g.drawRect(pacman.getPosX(), pacman.getPosY(), 17, 17);
 
 		}else {
-
 			pacman.setPosX(pacman.getPosX() - pacman.getVelX());
 			pacman.setPosY(pacman.getPosY() - pacman.getVelY());
 			colisionZone = new Rectangle(pacman.getPosX(), pacman.getPosY(), 17, 17);
@@ -181,15 +181,32 @@ public class GameWindow extends JPanel implements ActionListener {
 
 		for(int i = 0; i < GhostsList.size(); i++){
 			Ghost temp_ghost = GhostsList.get(i);
-			temp_ghost.paint(g2d);
 			if(temp_ghost.collision(pacman.getColisionZone())){
-				System.out.println("Choco con el ghosts");
 				if(temp_ghost.get_is_on()){
-					System.out.println(("Aqui el personaje pierde"));
+					if(pacman.getLives() == 0){
+						playing = false;
+					} else{
+						pacman.setLives(pacman.getLives() - 1);
+						pacman.resetPacman();
+					}
 				} else{
 					temp_ghost.set_is_on(true);
 					temp_ghost.load_image();
 					temp_ghost.restart_position();
+				}
+			} else{
+				//Movimiento del fantasma
+				if(pacman.getPosX() > GhostsList.get(i).getPosX()) {
+					temp_ghost.paint(g2d, "L");
+				}
+				else if (pacman.getPosX() < GhostsList.get(i).getPosX()) {
+					temp_ghost.paint(g2d, "R");
+				}
+				else if (pacman.getPosY() > GhostsList.get(i).getPosY()) {
+					temp_ghost.paint(g2d, "D");
+				}
+				else if (pacman.getPosY() < GhostsList.get(i).getPosY()) {
+					temp_ghost.paint(g2d, "U");
 				}
 			}
 		}
@@ -213,8 +230,6 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	public void candyChange() throws IOException {
-		//pacman.setVelX(pacman.getVelX()+5);
-		//pacman.setVelY(pacman.getVelY()+5);
 
 		for(int i = 0; i < GhostsList.size(); i++){
 			Ghost temp_ghost = GhostsList.get(i);
@@ -284,12 +299,6 @@ public class GameWindow extends JPanel implements ActionListener {
 					pacman.setVelY(5);
 				} else if (key == KeyEvent.VK_ESCAPE && timer.isRunning()) {
 					playing = false;
-				} else if (key == KeyEvent.VK_PAUSE) {
-					if (timer.isRunning()) {
-						timer.stop();
-					} else {
-						timer.start();
-					}
 				}
 			}
 
@@ -334,16 +343,36 @@ public class GameWindow extends JPanel implements ActionListener {
 			mens="";
 
 			if(datos[0].contentEquals("fruta")) {
-				Fruit fruit = new Fruit(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[4]), Integer.parseInt(datos[3]));
-				FruitsList.add(fruit);
+				while(true){
+					int fila = Integer.parseInt(datos[3]);
+					int columna = Integer.parseInt(datos[4]);
+					if(matrix[fila][columna] == 0 || matrix[fila][columna] == 3){
+						Fruit fruit = new Fruit(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), columna, fila);
+						FruitsList.add(fruit);
+						break;
+					} else{
+						columna += 1;
+					}
+				}
 			}
+
 			if(datos[0].contentEquals("fantasma")) {
-				Ghost ghost = new Ghost(Integer.parseInt(datos[1]));
+				Ghost ghost = new Ghost(Integer.parseInt(datos[1]), Integer.parseInt(datos[2]));
 				GhostsList.add(ghost);
 			}
+
 			if(datos[0].contentEquals("pastilla")) {
-				Candy candy = new Candy(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[3]));
-				candyList.add(candy);
+				while(true){
+					int fila = Integer.parseInt(datos[2]);
+					int columna = Integer.parseInt(datos[3]);
+					if(matrix[fila][columna] == 0 || matrix[fila][columna] == 3) {
+						Candy candy = new Candy(Integer.parseInt(datos[1]), columna, fila);
+						candyList.add(candy);
+						break;
+					} else{
+						columna += 1;
+					}
+				}
 			}
 			if(datos[0].contentEquals("vidas")) {
 				pacman.addLives(Integer.parseInt(datos[1]));
@@ -356,6 +385,7 @@ public class GameWindow extends JPanel implements ActionListener {
 			
 		}
 	}
+
 	static String mens = "";
 	public static void putText(String texto) {
 		mens = texto;

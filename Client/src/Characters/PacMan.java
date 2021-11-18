@@ -7,7 +7,7 @@ public class PacMan {
 
     Integer posX = 460;
     Integer posY = 300;
-    Integer lives =3 ;
+    Integer lives = 3;
 
     Image pacmanImg;
 
@@ -50,6 +50,11 @@ public class PacMan {
 
     public Boolean getNotColliding() {
         return notColliding;
+    }
+
+    public void resetPacman(){
+        posX = 460;
+        posY = 300;
     }
 
     public void setNotColliding(Boolean notColliding) {
