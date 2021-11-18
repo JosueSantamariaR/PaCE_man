@@ -126,13 +126,17 @@ void joinToGame() {
     }
     if(option==3) {
 
+        int candyScore;
+        printf("  \tIngrese el puntaje de la pastilla: ");
+        scanf("%u", &candyScore);
+
         printf("\n\tIngrese la fila");
         int rowp;
         scanf("%d", &rowp);
         printf("\n\tIngrese la columna");
         int colump;
         scanf("%d", &colump);
-        sprintf(message, "pastilla,%u,%u", rowp, colump);
+        sprintf(message, "pastilla,%u,%u,%u",candyScore, rowp, colump);
     }
     if(option==4) {
         printf("\n\t Cambiar velocidad del fantasma\n");

@@ -1,5 +1,6 @@
 package Interface;
 
+import Characters.Candy;
 import Characters.Fruit;
 import Characters.Ghost;
 import Characters.PacMan;
@@ -60,6 +61,7 @@ public class GameWindow extends JPanel implements ActionListener {
 	ArrayList<Fruit> FruitsList = new ArrayList<Fruit>();
 	ArrayList<Ghost> GhostsList = new ArrayList<Ghost>();
 	//ArrayList<Integer> dotConsumedListY = new ArrayList<Integer>();
+	ArrayList<Candy> candyList = new ArrayList<Candy>();
 
 	Image dotImg = new ImageIcon("Images/dot.png").getImage().getScaledInstance(15,15,1);
 	Integer size = 25;
@@ -156,6 +158,10 @@ public class GameWindow extends JPanel implements ActionListener {
 					FruitsList.remove(temp_fruit);
 				}
 			}
+		}
+
+		for(int i = 0; i < candyList.size(); i++){
+			candyList.get(i).paint(g2d);
 		}
 
 		for(int i = 0; i < GhostsList.size(); i++){
@@ -295,9 +301,9 @@ public class GameWindow extends JPanel implements ActionListener {
 				GhostsList.add(ghost);
 			}
 			if(datos[0].contentEquals("pastilla")) {
-				//Crear pastilla
+				Candy candy = new Candy(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[3]));
 				System.out.println("Creando pastilla ");
-				matrix[19][19] = 19;
+				candyList.add(candy);
 			}
 			if(datos[0].contentEquals("velocidad")) {
 				//Cambiando velocidad

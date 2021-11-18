@@ -6,7 +6,8 @@ bin-release/
 
 # Other files and folders
 .settings/
-
+.Client/out/production/
+.Server/cmake-build-debug-cygwin/
 # Executables
 *.swf
 *.air
@@ -16,3 +17,25 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+*.class
+*.class
+*.class
+*.cmake
+*.exe
+Client/out/production/Client/Interface/GameWindow$TAdapter.class
+Client/out/production/Client/Interface/GameWindow.class
+Client/out/production/Client/Interface/GameWindow.class
+Client/out/production/Client/Interface/GameWindow$TAdapter.class
+
+Server/.idea/workspace.xml
+Server/cmake-build-debug-cygwin/cmake_install.cmake
+Server/cmake-build-debug-cygwin/CMakeCache.txt
+Server/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin
+Client/out/production/Client/Interface/GameWindow$TAdapter.class
+Client/out/production/Client/Interface/GameWindow.class
+Server/.idea/workspace.xml
+Server/cmake-build-debug-cygwin/cmake_install.cmake
+Server/cmake-build-debug-cygwin/CMakeCache.txt
+Server/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c
+Server/cmake-build-debug-cygwin/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin
+*.o
