@@ -127,8 +127,14 @@ public class GameWindow extends JPanel implements ActionListener {
 		Graphics2D g2d = (Graphics2D) g;
 		g.setFont(new Font("TimesRoman", Font.BOLD, 16));
 		g.setColor(Color.YELLOW);
-		g.drawString("Level: "+ pacman.getCurrentLevel().toString(), 1000, 80);
-		g.drawString("Score: "+ pacman.getScore().toString(), 1000, 100);
+		g.drawString("Level: "+ pacman.getCurrentLevel().toString(), 1000, 100);
+		g.drawString("Score: "+ pacman.getScore().toString(), 1000, 140);
+		g.drawString("Lives: "+ pacman.getLives().toString(), 1000, 180);
+		for(int i=0;i<pacman.getLives();i++){
+			int sum=50*i;
+			g2d.drawImage(pacman.getPacmanLives(), 1100+sum, 160, this);
+
+		}
 		pacman.setPosX(pacman.getPosX() + pacman.getVelX());
 		pacman.setPosY(pacman.getPosY() + pacman.getVelY());
 		colisionZone = new Rectangle(pacman.getPosX(), pacman.getPosY(), 17, 17);
@@ -338,6 +344,10 @@ public class GameWindow extends JPanel implements ActionListener {
 			if(datos[0].contentEquals("pastilla")) {
 				Candy candy = new Candy(Integer.parseInt(datos[1]),Integer.parseInt(datos[2]), Integer.parseInt(datos[3]));
 				candyList.add(candy);
+			}
+			if(datos[0].contentEquals("vidas")) {
+				pacman.addLives(Integer.parseInt(datos[1]));
+				System.out.println(pacman.getLives());
 			}
 			if(datos[0].contentEquals("velocidad")) {
 				//Cambiando velocidad

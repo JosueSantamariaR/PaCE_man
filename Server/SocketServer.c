@@ -75,7 +75,8 @@ void joinToGame() {
     printf("3.\tPara ingresar una pastilla\n");
     printf("4.\tModificar la velocidad de los fantasmas\n");
     printf("5.\tRegresar\n");
-    printf("6.\tSalir \n");
+    printf("6.\tIngresar una vidas \n");
+    printf("7.\tSalir \n");
     printf("  \tIngrese la accion a realizar: ");
 
     int option=0;
@@ -86,8 +87,7 @@ void joinToGame() {
         printf("1.\tCereza\n");
         printf("2.\tFresa\n");
         printf("3.\tNaranja\n");
-        printf("4.\tManzana\n");
-        printf("5.\tUvas\n");
+        printf("4.\tUvas\n");
         int fruitType;
         printf("  \tIngrese la fruta a escoger: ");
         scanf("%d", &fruitType);
@@ -158,6 +158,12 @@ void joinToGame() {
         return;
     }
     if(option==6) {
+        printf("  \tIngrese la cantidad de vidas: ");
+        int lives;
+        scanf("%d", &lives);
+        sprintf(message, "vidas,%d",lives);
+    }
+    if(option==7) {
         authenticated= false;
     }
     printf("Mensaje enviado: \"%s\". \n", message);
