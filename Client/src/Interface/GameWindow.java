@@ -200,6 +200,7 @@ public class GameWindow extends JPanel implements ActionListener {
 
 		for(Integer i = 0; i < GhostsList.size(); i++){
 			Ghost temp_ghost = GhostsList.get(i);
+			boolean dibujar = false;
 			if(temp_ghost.collision(pacman.getColisionZone())){
 				if(temp_ghost.get_is_on()){
 					if(pacman.getLives() == 0){
@@ -215,17 +216,48 @@ public class GameWindow extends JPanel implements ActionListener {
 				}
 			} else{
 				//Movimiento del fantasma
-				if(pacman.getPosX() > GhostsList.get(i).getPosX()) {
+				if(pacman.getPosX() > temp_ghost.getPosX()) {
 					temp_ghost.paint(g2d, "L");
+					/*int x = (int) (temp_ghost.getPosX() - 205)/25;
+					int y = (int) (temp_ghost.getPosY() - 5)/25;
+					if(matrix[y][x-1] == 3 || matrix[y][x-1] == 0){
+						temp_ghost.paint(g2d, "L");
+						dibujar = true;
+					} else{
+						temp_ghost.paint(g2d, "P");
+					}*/
 				}
-				else if (pacman.getPosX() < GhostsList.get(i).getPosX()) {
+				else if (pacman.getPosX() < temp_ghost.getPosX()) {
 					temp_ghost.paint(g2d, "R");
+					/*int x = (int) (temp_ghost.getPosX() - 205)/25;
+					int y = (int) (temp_ghost.getPosY() - 5)/25;
+					if(matrix[y][x+1] == 3 || matrix[y][x+1] == 0){
+						temp_ghost.paint(g2d, "R");
+						dibujar = true;
+					} else{
+						temp_ghost.paint(g2d, "P");
+					}*/
 				}
-				else if (pacman.getPosY() > GhostsList.get(i).getPosY()) {
-					temp_ghost.paint(g2d, "D");
-				}
-				else if (pacman.getPosY() < GhostsList.get(i).getPosY()) {
-					temp_ghost.paint(g2d, "U");
+				if(!dibujar) {
+					if (pacman.getPosY() > temp_ghost.getPosY()) {
+						temp_ghost.paint(g2d, "D");
+						/*int x = (int) (temp_ghost.getPosX() - 205) / 25;
+						int y = (int) (temp_ghost.getPosY() - 5) / 25;
+						if (matrix[y][x] == 3 || matrix[y][x] == 0) {
+							temp_ghost.paint(g2d, "D");
+						} else {
+							temp_ghost.paint(g2d, "P");
+						}*/
+					} else if (pacman.getPosY() < temp_ghost.getPosY()) {
+						temp_ghost.paint(g2d, "U");
+						/*int x = (int) (temp_ghost.getPosX() - 205) / 25;
+						int y = (int) (temp_ghost.getPosY() - 5) / 25;
+						if (matrix[y][x] == 3 || matrix[y][x] == 0) {
+							temp_ghost.paint(g2d, "U");
+						} else {
+							temp_ghost.paint(g2d, "P");
+						}*/
+					}
 				}
 			}
 		}
