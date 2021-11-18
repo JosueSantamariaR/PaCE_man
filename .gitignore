@@ -39,3 +39,5 @@ Server/cmake-build-debug-cygwin/CMakeCache.txt
 Server/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c
 Server/cmake-build-debug-cygwin/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin
 *.o
+*.exe
+Server/cmake-build-debug-cygwin/Server.exe
