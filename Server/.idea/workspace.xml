@@ -30,50 +30,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de18d13b-1d68-4007-b158-0e956e93d6cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Client/src/Characters/Fruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Characters/PacMan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Characters/PacMan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Interface/GameWindow$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Interface/GameWindow$TAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Interface/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Interface/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Interface/windowJFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Interface/windowJFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Sockets/Socket.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Sockets/Socket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Characters/PacMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Characters/PacMan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Interface/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Interface/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Interface/windowJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Interface/windowJFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Sockets/Socket.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Sockets/Socket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer.c" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/3.17.3/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/Game.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/SocketServer.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/Server.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/Server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/Server.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/Server.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-cygwin/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-cygwin/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +94,7 @@
       <updated>1637146535190</updated>
       <workItem from="1637146536520" duration="9926000" />
       <workItem from="1637157746263" duration="668000" />
-      <workItem from="1637203689667" duration="1280000" />
+      <workItem from="1637203689667" duration="1960000" />
     </task>
     <servers />
   </component>
