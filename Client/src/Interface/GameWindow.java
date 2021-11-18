@@ -51,7 +51,7 @@ public class GameWindow extends JPanel implements ActionListener {
 			{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
 	};
 
-	PacMan pacman = new PacMan();
+	PacMan pacman = PacMan.getInstance();
 	Boolean playing;
 	Rectangle colisionZone;
 	private Timer timer;

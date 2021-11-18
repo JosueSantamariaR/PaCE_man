@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class PacMan {
 
+    private static PacMan pacman = null;
+
     Integer posX = 460;
     Integer posY = 300;
     Integer lives = 3;
@@ -22,6 +24,17 @@ public class PacMan {
     Integer score = 0;
     Integer currentLevel = 1;
 
+    /**
+     * Getter of the pacman instance
+     * @return
+     */
+    public static PacMan getInstance()
+    {
+        if (pacman == null)
+            pacman = new PacMan();
+
+        return pacman;
+    }
 
     /**
      * Getter of the pacman lives
