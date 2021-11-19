@@ -63,6 +63,7 @@ struct Ghost {
     int y;
     int colision;
 };
+
 struct Fruit {
     int type;
     int score;
@@ -70,7 +71,10 @@ struct Fruit {
 
 struct Player;
 
-
+/**
+ * Metodo principal para el inicio del juego
+ *
+ */
 void startGame(struct Player player1) {
     showBoard(gameBoard);
     copyBoards();
@@ -80,18 +84,28 @@ void startGame(struct Player player1) {
     return;
 };
 
+/**
+ * Metodo auxiliar para el inicio del juego donde dependiendo
+ * de las opciones muestra diferentes tipos de informacion
+ *
+ */
+
 void startGameAux(char move) {
     printf("Se preciona tecla : %c \n", move);
+    //Detiene el juego
     if (move == 'p') {
         printf("Game Stop");
         return;
     }
+    //Muestra el tablero
     if (move == 'i') {
         showBoard(gameBoard);
     }
+    //Agrega objetos al tablero
     if (move == 'f') {
         addObjetsBoard();
     }
+    //Muestra los datos actuales del jugador
     if (move == 'e') {
         printf("---------------------------------------- \n");
         printf("------------------Game Data------------- \n");
@@ -102,9 +116,11 @@ void startGameAux(char move) {
         printf("Level: %d \n", player.level);
         printf("---------------------------------------- \n");
     }
+    //Mueve el pacman
     movePacman(move);
     movePacman(move);
 
+    //Comprueba si se pasa al siguiente nivel
     if (nextLevel() == true) {
         player.level++;
         resetBoard();
@@ -118,7 +134,13 @@ void startGameAux(char move) {
     startGameAux(move2);
 };
 
+
+/**
+ * Metodo para la creacion de los fantasmas dependiendo de las seleccion
+ * del moderador en el menu de opciones.
+ */
 void createGhost(int type, int speed, int x, int y) {
+
     if (type == 5 || type == 6 || type == 7 || type == 8) {
         int e = entityOnBoard(x, y);
         printf("Se Encontro: %d \n", e);
@@ -147,6 +169,11 @@ void createGhost(int type, int speed, int x, int y) {
     }
 };
 
+/**
+ * Metodo para la creacion de los frutas dependiendo de las seleccion
+ * del moderador en el menu de opciones.
+ */
+
 void createFruit(int type, int score) {
     if (type == 9 || type == 10 || type == 11 || type == 12 || type == 13) {
         struct Fruit fruit = {type, score};
@@ -156,6 +183,9 @@ void createFruit(int type, int score) {
     }
 };
 
+/**
+ * Metodo para mostrar el tablero
+ */
 void showBoard(int **board) {
     for (int i = 0; i < 31; i++) {
         for (int j = 0; j < 28; j++) {
@@ -164,6 +194,10 @@ void showBoard(int **board) {
         printf("\n");
     }
 }
+
+/**
+ * Metodo para obtener el movimiento dependiendo de las teclas presionadas
+ */
 
 char getMovement() {
     char c = getchar();
@@ -180,6 +214,10 @@ char getMovement() {
     }
 };
 
+/**
+ * Metodo encargado del movimiento del pacman dependiendo de las teclas pulsadas por el usuario.
+ *
+ */
 void movePacman(char move) {
     if (move == 'i') {
         return;
@@ -191,19 +229,37 @@ void movePacman(char move) {
         return;
     }
     struct Pos position = searchEntity(2);
+
     int ix = 0;
     int jx = 0;
     int ii = position.i;
     int ji = position.j;
+
+
     if (move == 'w') ix = -1;
     if (move == 's') ix = 1;
     if (move == 'a') jx = -1;
     if (move == 'd') jx = 1;
+
     position.i += ix;
     position.j += jx;
+
+    /**
+     * Comprueba si la posicion en la que se encuentra es diferente de 1 lo
+     * que significa que no se encuentra una pared de obstaculo entonces
+     * realiza otras comprobaciones.
+     *
+     */
     while (gameBoard[position.i][position.j] != 1) {
+
+        /**
+         * Comprueba si hay fantasmas y si no esta en el candymode entonces si toca los fantasmas
+         * pierde
+         */
         int entTable = gameBoard[position.i][position.j];
+
         if (entTable == 5 || entTable == 6 || entTable == 7 || entTable == 8) {
+
             if (candyMode == false) {
                 gameOver(position.i, position.j);
                 break;
@@ -211,6 +267,11 @@ void movePacman(char move) {
                 break;
             }
         }
+
+        /**
+         * Comprueba si el pacman se encuentra en un pacman dot o
+         *  si se encuentra en las frutas y se le suman puntos al score del player
+         */
         if (entTable == 3) player.score += 10;
         if (entTable == 9 || entTable == 10 || entTable == 11 || entTable == 12 || entTable == 13) {
             player.score += mapFruits.score;
@@ -226,8 +287,7 @@ void movePacman(char move) {
     }
 };
 
-
-
+//Busca la entidad entro del tablero
 struct Pos searchEntity(int type) {
     for (int i = 0; i < 31; i++) {
         for (int j = 0; j < 28; j++) {
@@ -239,11 +299,12 @@ struct Pos searchEntity(int type) {
         }
     }
 };
-
+//Retorna la entidad dentro del tablero
 int entityOnBoard(int i, int j) {
     return gameBoard[i][j];
 };
 
+//Busca el tipo de fantasma
 bool searchGhostTypes(int type) {
     for (int i = 0; i < 4; i++) {
         if (ghotsList[i] == type) {
@@ -254,6 +315,10 @@ bool searchGhostTypes(int type) {
     return false;
 }
 
+/**
+ * Comprueba si el pacman tiene vidas y si no termina el juego
+ * Si tiene vidas se le restas y se resetea a la posicion inicial
+ */
 void gameOver(int i, int j) {
     if (player.lives == 0) {
         return;
@@ -266,6 +331,9 @@ void gameOver(int i, int j) {
 
 }
 
+/**
+ * Metodo encargado de la creacion de los objetos
+ */
 void addObjetsBoard() {
     printf("\n");
     printf("------------------------------------------------------\n");
@@ -315,6 +383,9 @@ void addObjetsBoard() {
     }
 }
 
+/**
+ * Compia el tablero para el siguiente nivel
+ */
 void copyBoards() {
     for (int i = 0; i < 31; i++) {
         for (int j = 0; j < 28; j++) {
@@ -324,6 +395,9 @@ void copyBoards() {
 
 }
 
+/**
+ * Cuando se pasa de nivel se restablece el tablero
+ */
 void resetBoard() {
     for (int i = 0; i < 31; i++) {
         for (int j = 0; j < 28; j++) {
@@ -333,11 +407,14 @@ void resetBoard() {
 
 }
 
+//Comprobacion de si se pasa al siguiente nivel
 bool nextLevel() {
     if (scoreCount() == 0) return true;
     return false;
 }
 
+
+//Cuenta el puntaje total de los pacdots
 int scoreCount() {
     int cant = 0;
     for (int i = 0; i < 31; i++) {
@@ -348,6 +425,9 @@ int scoreCount() {
     return cant;
 }
 
+/**
+ * Metodo encargado del movimiento del fantasma blinky
+ */
 void blinkyMovement() {
     int move = rand() % 4;
     struct Pos blinkyPosition = searchEntity(5);

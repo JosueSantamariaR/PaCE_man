@@ -10,6 +10,10 @@
 char message[1024];
 bool authenticated = true;
 
+/**
+ * Metodo principal de la creacion de los sockets con la comprobacion de erores
+ * dependiendo de la etapa de ejecucion en la que se encuentre
+ */
 void server() {
     int serverConection, clienConection, port;
     socklen_t longc;
@@ -63,6 +67,10 @@ void server() {
 
 }
 
+/**
+ * Metodo encargado de mostrar las opciones al moderador
+ * sobre la creacion de objetos y acciones ha realizar
+ */
 
 void joinToGame() {
     printf("\n");
@@ -174,7 +182,12 @@ void joinToGame() {
 
 
 
-
+/**
+ * Se inicia una vez que se elija en el menu principal
+ * Se encarga de la conexion con el cliente por medio de sockets en el puerto 25578
+ * Tiene las comprobaciones de errores dependiendo del estado
+ *
+ */
 void client() {
     int socketValue = 0;
     struct sockaddr_in socketServerAddr;
@@ -199,6 +212,14 @@ void client() {
     {
         return;
     }
+
+
+
+/**
+ * Una vez establecida la coneccion se inicia el juego preguntando
+ * al moderador los objetos y opciones ha agregar
+ */
+
     joinToGame();
     send(socketValue , message , (strlen(message)+1), 0 );
     printf("\n");
@@ -208,6 +229,14 @@ void client() {
     close(socketValue);
 }
 
+
+
+
+/**
+ * Metodo encargado de la parte inicial en consola
+ * Comprueba la autenticacion con el client y tambien
+ * se desconecta del cliente dependiendo de la seleccion.
+ */
 void startClient() {
     printf("------------------------------------------------------\n");
     printf("--------------------PACMAN MENU-----------------------\n");
