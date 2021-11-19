@@ -9,9 +9,17 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class StartWindow extends JFrame {
+
 	
 	Boolean conection = false;
-	
+	private Image Image = new ImageIcon("Images/paceman.jpg").getImage();
+	private Image play = new ImageIcon("Images/play.png").getImage();
+	private JPanel contentpane;
+
+	/**
+	 * Main method in charge of the gameStart creation a conection with the sockets
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		Thread thread1 = new Thread() {
@@ -32,10 +40,11 @@ public class StartWindow extends JFrame {
 			}
 		});
 	}
-	private Image Image = new ImageIcon("Images/paceman.jpg").getImage();
-	private Image play = new ImageIcon("Images/play.png").getImage();
-	private JPanel contentpane;
 
+
+	/**
+	 * Create the window and display it
+	 */
 
 	public StartWindow() {
 		setLayout(null);
@@ -79,6 +88,10 @@ public class StartWindow extends JFrame {
 		this.add(contentpane);
 	}
 
+	/**
+	 * Method in charge of starting the socket
+	 * @return
+	 */
 	static Runnable startSocket() {
 		try {
 			new Socket();

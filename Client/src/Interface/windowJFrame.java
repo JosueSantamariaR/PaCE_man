@@ -6,8 +6,11 @@ import javax.swing.*;
 
 
 public class windowJFrame extends JFrame {
-	
-	
+
+
+	/**
+	 * Method in charge of the window creation
+	 */
 	public windowJFrame() {
 		setTitle("PaCE-man");
 		setVisible(true);

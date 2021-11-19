@@ -70,6 +70,9 @@ public class GameWindow extends JPanel implements ActionListener {
 
 	Integer score_aux = 10000;
 
+	/**
+	 * Method in charge to show the windows
+	 */
 	public GameWindow() {
 		setBounds(0, 0, 1366, 740);
 		setBackground(Color.BLACK);
@@ -84,6 +87,10 @@ public class GameWindow extends JPanel implements ActionListener {
 		timer = new Timer(40, this);
 	}
 
+	/**
+	 * Method in charge of objects draw
+	 * @param g
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -98,6 +105,11 @@ public class GameWindow extends JPanel implements ActionListener {
 
 	}
 
+	/**
+	 * Method that is in charge of drawing the board and checks in the matrix if there is a 1 it is a wall and if there is a 3 it is a pacdot
+	 * @param g
+	 * @throws IOException
+	 */
 	private void doDrawing(Graphics g) throws IOException {
 
 		checkChanges(g);
@@ -236,6 +248,10 @@ public class GameWindow extends JPanel implements ActionListener {
 
 	}
 
+	/**
+	 *  Method who is in charge of changing the fanstama's image when the candy is consumed
+	 * @throws IOException
+	 */
 	public void candyChange() throws IOException {
 
 		for(Integer i = 0; i < GhostsList.size(); i++){
@@ -247,6 +263,11 @@ public class GameWindow extends JPanel implements ActionListener {
 		timer.start();
 	}
 
+	/**
+	 *
+	 Method that is responsible for checking if it is making a collision with the wall
+	 * @return
+	 */
 	public Boolean isCollidingWalls() {
 		for(Integer i=0; i<rectList.size();i++) {
 			if(pacman.getColisionZone().intersects(rectList.get(i))) {
@@ -256,6 +277,10 @@ public class GameWindow extends JPanel implements ActionListener {
 		return false;
 	}
 
+	/**
+	 *
+	 Method that is in charge of checking if it is making a collision with the pacdots
+	 */
 	public void isCollidingDots() {
 		for(Integer i=0; i<dotList.size();i++) {
 			if(pacman.getColisionZone().intersects(dotList.get(i))) {
@@ -270,8 +295,13 @@ public class GameWindow extends JPanel implements ActionListener {
 
 	}
 
+
 	class TAdapter extends KeyAdapter {
 
+		/**
+		 * Method that is responsible for checking if you are pressing a key
+		 * @param e
+		 */
 		@Override
 		public void keyPressed(KeyEvent e) {
 
@@ -311,6 +341,11 @@ public class GameWindow extends JPanel implements ActionListener {
 
 		}
 
+		/**
+		 * Method that is in charge of checking if the key was released
+		 * @param e
+		 */
+
 		@Override
 		public void keyReleased(KeyEvent e) {
 
@@ -332,12 +367,18 @@ public class GameWindow extends JPanel implements ActionListener {
 		}
 	}
 
+
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		repaint();
 	}
-	
+
+	/**
+	 * Method in order of the verification and reception of the objects
+	 * sent from the server and depending on what it receives it performs an action or creation of objects
+	 * @param g
+	 */
 	void checkChanges(Graphics g){
 		
 		if (mens != "") {
@@ -399,6 +440,12 @@ public class GameWindow extends JPanel implements ActionListener {
 	}
 
 	static String mens = "";
+
+	/**
+	 *
+	 Method in charge of writing the text
+	 * @param texto
+	 */
 	public static void putText(String texto) {
 		mens = texto;
 	}

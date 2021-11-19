@@ -17,15 +17,26 @@ public class Socket {
     static Boolean conection = false;
 
 
+    /**
+     * Getter of the server message
+     * @return
+     */
     public static String getMessage() {
         return message;
     }
 
+    /**
+     * Check if the conection was succesfull
+     * @return
+     */
     public static Boolean tryConection() {
         return conection;
     }
 
-
+    /**
+     * Method in charge of establishing the connection between the server and the client.
+     * @throws IOException
+     */
     @SuppressWarnings("deprecation")
     public Socket() throws IOException {
         try {
